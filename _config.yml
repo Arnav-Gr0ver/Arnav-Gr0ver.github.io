@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Arnav's Portfolio"
+title                    : "Arnav's Homepage"
 title_separator          : "-"
 name                     : &name "Arnav Grover"
 description              : &description "CS @ Purdue | TBD | TBD"
