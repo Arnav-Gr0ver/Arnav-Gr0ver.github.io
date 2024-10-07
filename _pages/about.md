@@ -16,9 +16,9 @@ My work centers on applying ML techniques to the financial domain, aiming to dev
 
 ## Current Projects & Interests 🚀
 
-- **Open-Source Multimodal LLM Development**: Contributing to the creation of **large language models** that integrate multiple data types (text, audio, and visual) to enhance their understanding and generate more accurate predictions across diverse domains.
-- **Modeling the Effects of Economic Policies**: Researching the impact of different **economic policies** using advanced **machine learning techniques** to simulate and predict their influence on market dynamics and financial stability.
-- **Deep Tech Startup Ideation**: Conceptualizing innovative solutions that apply AI to streamline the **due diligence** process in private equity, ensuring data-driven insights and robust predictive capabilities.
+- **Open-Source Multimodal LLM Development**: Contributing to the creation of large language models that integrate multiple data types (text, audio, and visual) to enhance their understanding and generate more accurate predictions across diverse domains.
+- **Modeling the Effects of Economic Policies**: Researching the impact of different economic policies using advanced machine learning techniques to simulate and predict their influence on market dynamics and financial stability.
+- **Deep Tech Startup Ideation**: Conceptualizing innovative solutions that apply AI to streamline the due diligence process in private equity, ensuring data-driven insights and robust predictive capabilities.
 
 ## Academic Background 🎓
 
@@ -30,4 +30,4 @@ Outside of my research, I actively engage with the broader **tech community** th
 
 ## Let’s Connect! 🤝
 
-I’m always open to discussions on **AI research**, **NLP innovations**, and **financial technology** trends. Feel free to reach out if you’d like to collaborate or simply connect over shared academic interests!
+I’m always open to discussions on **AI research**, **NLP innovations**, and **fintech** trends. Feel free to reach out if you’d like to collaborate or simply connect over shared academic interests!
