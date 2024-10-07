@@ -1,6 +1,6 @@
 ---
 title: "ICAIF - FinanceRAG Challenge 2024"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/ICAIF_FinanceRAG-2024-Cover_Img.png'>"
+excerpt: "Developing Retrieval-Augmented Generation (RAG) systems to accurately retrieve and analyze textual and tabular data from financial documents, aiming to improve decision-making tools in the finance industry.<br/><img src='/images/ICAIF_FinanceRAG-2024-Cover_Img.png'>"
 collection: portfolio
 ---
 
