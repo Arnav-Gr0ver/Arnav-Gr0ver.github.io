@@ -25,7 +25,7 @@ author:
   name             : "Arnav Grover"
   pronouns         : # example: "she/her"  
   bio              : "Applied ML Researcher"
-  location         : "Stamford, CT"
+  # location         : "Stamford, CT"
   employer         : "Purdue University"
   uri              : # URL
   email            : "arnavgrover@gmail.com" 
