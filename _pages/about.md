@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About"
+title: "Arnav's Homepage"
 author_profile: true
 redirect_from: 
   - /about/
