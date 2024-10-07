@@ -8,16 +8,16 @@ redirect_from:
 
 ## About Me 👋
 
-Welcome! I’m **Arnav Grover**, a Computer Science student at **Purdue University** with a concentration in Artificial Intelligence and Machine Learning. My primary research interests lie at the intersection of **machine learning**, **natural language processing (NLP)**, and financial data analysis. I’m passionate about leveraging these technologies to drive innovation in the fields of **financial forecasting** and **economic modeling**.
+Welcome! I’m **Arnav Grover**, a Computer Science student at **Purdue University** with a concentration in Artificial Intelligence and Machine Learning. My primary research interests lie at the intersection of **machine learning**, **natural language processing (NLP)**, and **financial data analysis**. I’m passionate about leveraging these technologies to drive innovation in the fields of financial forecasting and economic modeling.
 
 ## Research Focus 🔍
 
-My work centers on applying machine learning techniques to the financial domain, aiming to develop predictive models for market behavior and investment strategies. I’m particularly interested in exploring how **multimodal time series data** and **large language models (LLMs)** can be utilized to enhance decision-making processes in areas like **private equity** and risk management. My goal is to bridge the gap between data science and finance by creating tools that can extract meaningful insights from complex datasets.
+My work centers on applying ML techniques to the financial domain, aiming to develop predictive models for market behavior and investment strategies. I’m particularly interested in exploring how **multimodal time series data** and **large language models (LLMs)** can be utilized to enhance decision-making processes in areas like private equity and risk management. My goal is to bridge the gap between data science and finance by creating tools that can extract meaningful insights from complex datasets.
 
 ## Current Projects & Interests 🚀
 
-- **Financial Forecasting with ML**: Developing models that use **AI** and **NLP** to analyze economic indicators and predict market trends.
-- **Supervised Classification Models**: Working on projects that classify and interpret financial data from platforms like ...
+- **Open-Source Multimodal LLM Development**: Contributing to the creation of **large language models** that integrate multiple data types (text, audio, and visual) to enhance their understanding and generate more accurate predictions across diverse domains.
+- **Modeling the Effects of Economic Policies**: Researching the impact of different **economic policies** using advanced **machine learning techniques** to simulate and predict their influence on market dynamics and financial stability.
 - **Deep Tech Startup Ideation**: Conceptualizing innovative solutions that apply AI to streamline the **due diligence** process in private equity, ensuring data-driven insights and robust predictive capabilities.
 
 ## Academic Background 🎓
