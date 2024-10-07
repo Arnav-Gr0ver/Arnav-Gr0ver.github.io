@@ -6,8 +6,6 @@ redirect_from:
   - /about.html
 ---
 
-## About Me 👋
-
 Welcome! I’m **Arnav Grover**, a Computer Science student at **Purdue University** with a concentration in Artificial Intelligence and Machine Learning. My primary research interests lie at the intersection of **machine learning**, **natural language processing (NLP)**, and **financial data analysis**. I’m passionate about leveraging these technologies to drive innovation in the fields of financial forecasting and economic modeling.
 
 ## Research Focus 🔍
