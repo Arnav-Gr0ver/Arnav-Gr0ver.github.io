@@ -20,12 +20,12 @@ My work centers on applying ML techniques to the financial domain, aiming to dev
 
 ## Academic Background 🎓
 
-I am currently pursuing my Bachelor’s degree in Computer Science at Purdue, where I have focused on building a solid foundation in **AI/ML techniques** and **data analysis frameworks**. My academic journey is driven by a deep curiosity about how machine learning can transform data into actionable intelligence, especially within the highly dynamic financial sector.
+I am currently pursuing my Bachelor’s degree in Computer Science at Purdue, where I have focused on building a solid foundation in AI/ML techniques and data analysis frameworks. My academic journey is driven by a deep curiosity about how machine learning can transform data into actionable intelligence, especially within the highly dynamic financial sector.
 
 ## Beyond Academia 🌱
 
-Outside of my research, I actively engage with the broader **tech community** through open-source contributions and collaborative projects. I’m also keen on following the latest advancements in **AI** and **data science**, and exploring how they can be applied to solve real-world problems.
+Outside of my research, I actively engage with the broader tech community through open-source contributions and collaborative projects. I’m also keen on following the latest advancements in AI and data science, and exploring how they can be applied to solve real-world problems.
 
 ## Let’s Connect! 🤝
 
-I’m always open to discussions on **AI research**, **NLP innovations**, and **fintech** trends. Feel free to reach out if you’d like to collaborate or simply connect over shared academic interests!
+I’m always open to discussions on AI research, NLP innovations, and fintech trends. Feel free to reach out if you’d like to collaborate or simply connect over shared academic interests!
