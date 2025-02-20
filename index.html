@@ -1,451 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnav Grover | Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/lucide-icons@0.321.0/icons/index.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #0a0a0a;
-            --text-primary: #ffffff;
-            --text-secondary: #d1d5db;
-            --border-color: #1f2937;
-            --hover-color: #4b5563;
-            --tag-bg: #374151;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 64rem;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0,0,0,0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 100;
-            height: 4rem;
-            display: flex;
-            align-items: center;
-        }
-        .navbar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 64rem;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            height: 100%;
-        }
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-        .social-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .social-links a:hover {
-            color: var(--hover-color);
-        }
-        .profile-image {
-            width: 12rem;
-            height: 12rem;
-            border-radius: 50%;
-            border: 3px solid #374151;
-            box-shadow: 0 10px 15px rgba(0,0,0,0.3);
-            margin: 8rem auto 2.5rem;
-            background-image: url('/api/placeholder/400/400');
-            background-size: cover;
-            background-position: center;
-        }
-        main {
-            padding-top: 4rem;
-        }
-        .hero {
-            text-align: center;
-            max-width: 48rem;
-            margin: 0 auto 4rem;
-        }
-        .section-title {
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: wider;
-            color: #9ca3af;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 3rem;
-            height: 2px;
-            background-color: #9ca3af;
-        }
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .research-card {
-            border: 1px solid var(--border-color);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .research-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--hover-color);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-        }
-        .research-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        .publication-list {
-            display: grid;
-            gap: 1.5rem;
-        }
-        .publication-card {
-            border: 1px solid var(--border-color);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        .publication-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--hover-color);
-        }
-        .award-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .award-card {
-            border: 1px solid var(--border-color);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: all 0.3s ease;
-        }
-        .award-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--hover-color);
-        }
-        .search-container {
-            margin-bottom: 2rem;
-        }
-        .search-input {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        .search-input:focus {
-            outline: none;
-            border-color: var(--hover-color);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .project-card {
-            border: 1px solid var(--border-color);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--hover-color);
-        }
-        .tag {
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.875rem;
-            color: white;
-            font-weight: 500;
-        }
-        .tag-ai { background-color: #2563eb; }
-        .tag-finance { background-color: #059669; }
-        .tag-nlp { background-color: #7c3aed; }
-        .tag-automation { background-color: #dc2626; }
-        .tag-ml { background-color: #9333ea; }
-        .tag-trading { background-color: #0891b2; }
-        .tag-rl { background-color: #ea580c; }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            justify-content: flex-end;
-        }
-        .project-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            background: var(--border-color);
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            transition: all 0.2s ease;
-        }
-        .project-links a:hover {
-            background: var(--hover-color);
-            transform: translateY(-2px);
-        }
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        .project-description {
-            margin: 1rem 0;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        section {
-            margin-bottom: 4rem;
-        }
-        footer {
-            background-color: #111827;
-            color: var(--text-secondary);
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-        @media (max-width: 768px) {
-            .navbar-content {
-                padding: 0 1rem;
-            }
-            .research-grid, .award-section, .project-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnav Grover | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/lucide-icons@0.321.0/icons/index.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --text-primary: #ffffff;
+      --text-secondary: #d1d5db;
+      --border-color: #1f2937;
+      --hover-color: #4b5563;
+      --tag-bg: #374151;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 100;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 100%;
+    }
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .social-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .social-links a:hover {
+      color: var(--hover-color);
+    }
+    /* Profile Image – fixed to center the pic */
+    .profile-image {
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      border: 3px solid #374151;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+      margin: 8rem auto 2.5rem;
+      overflow: hidden;
+    }
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    main {
+      padding-top: 4rem;
+    }
+    .hero {
+      text-align: center;
+      max-width: 48rem;
+      margin: 0 auto 4rem;
+    }
+    .section-title {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: wider;
+      color: #9ca3af;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 3rem;
+      height: 2px;
+      background-color: #9ca3af;
+    }
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .research-card {
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .research-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--hover-color);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    }
+    .research-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    /* New research card icon links at the bottom center */
+    .research-card-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .publication-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .publication-card {
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .publication-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--hover-color);
+    }
+    .award-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .award-card {
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.3s ease;
+    }
+    .award-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--hover-color);
+    }
+    .search-container {
+      margin-bottom: 2rem;
+    }
+    .search-input {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--hover-color);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--hover-color);
+    }
+    /* Icon tags now using inline-flex with full rounding */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      color: white;
+      font-weight: 500;
+    }
+    .tag-ai { background-color: #2563eb; }
+    .tag-finance { background-color: #059669; }
+    .tag-nlp { background-color: #7c3aed; }
+    .tag-automation { background-color: #dc2626; }
+    .tag-ml { background-color: #9333ea; }
+    .tag-trading { background-color: #0891b2; }
+    .tag-rl { background-color: #ea580c; }
+    /* New container so that tags and project links are on the same line */
+    .tag-and-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+    .project-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      background: var(--border-color);
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-links a:hover {
+      background: var(--hover-color);
+      transform: translateY(-2px);
+    }
+    .project-description {
+      margin: 1rem 0;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    section {
+      margin-bottom: 4rem;
+    }
+    footer {
+      background-color: #111827;
+      color: var(--text-secondary);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+    @media (max-width: 768px) {
+      .navbar-content {
+        padding: 0 1rem;
+      }
+      .research-grid, .award-section, .project-grid {
+        grid-template-columns: 1fr;
+      }
+      .tag-and-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .project-links {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <span style="font-weight: bold;">Research Portfolio</span>
-            <div class="social-links">
-                <a href="https://orcid.org/0009-0004-9422-5426" target="_blank">
-                    <i data-lucide="qr-code" class="icon"></i>
-                </a>
-                <a href="https://github.com/Arnav-Gr0ver" target="_blank">
-                    <i data-lucide="github" class="icon"></i>
-                </a>
-                <a href="https://scholar.google.com/citations?user=UcFqXasAAAAJ&hl=en" target="_blank">
-                    <i data-lucide="hash" class="icon"></i>
-                </a>
-                <a href="https://linkedin.com/in/arnav-gr0ver" target="_blank">
-                    <i data-lucide="linkedin" class="icon"></i>
-                </a>
-            </div>
+  <nav class="navbar">
+    <div class="navbar-content">
+      <span style="font-weight: bold;">Research Portfolio</span>
+      <div class="social-links">
+        <a href="https://orcid.org/0009-0004-9422-5426" target="_blank" title="ORCID">
+          <i data-lucide="qr-code" class="icon"></i>
+        </a>
+        <a href="https://github.com/Arnav-Gr0ver" target="_blank" title="GitHub">
+          <i data-lucide="github" class="icon"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=UcFqXasAAAAJ&hl=en" target="_blank" title="Google Scholar">
+          <i data-lucide="hash" class="icon"></i>
+        </a>
+        <a href="https://linkedin.com/in/arnav-gr0ver" target="_blank" title="LinkedIn">
+          <i data-lucide="linkedin" class="icon"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="profile-image">
+      <img src="high-res-pfp-linkedin.png" alt="Arnav Grover">
+    </div>
+
+    <div class="hero">
+      <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1.5rem;">Arnav Grover</h1>
+      <p style="color: var(--text-secondary); font-size: 1.125rem;">
+        Undergraduate Researcher at Purdue University, focusing on responsible AI governance, alignment, and quantitative finance. 
+        Committed to developing AI systems that are ethically robust, transparent, and beneficial to society.
+      </p>
+    </div>
+
+    <section>
+      <h2 class="section-title">Research Experience</h2>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-card-header">
+            <h3>AI Governance & Labor Markets</h3>
+          </div>
+          <p style="color: var(--text-secondary); flex-grow: 1;">
+            Leading PRISMA-guided systematic literature review at Purdue's Governance & Responsible AI Lab, 
+            synthesizing 24 years of AI and automation findings. Developing comprehensive frameworks for 
+            workforce policy and AI regulation stakeholders.
+          </p>
+          <div class="research-card-links">
+            <a href="#" target="_blank" title="More Info">
+              <i data-lucide="external-link" class="icon"></i>
+            </a>
+            <a href="#" target="_blank" title="Publications">
+              <i data-lucide="book-open" class="icon"></i>
+            </a>
+          </div>
         </div>
-    </nav>
+        <div class="research-card">
+          <div class="research-card-header">
+            <h3>Quantitative Trading & GenAI</h3>
+          </div>
+          <p style="color: var(--text-secondary); flex-grow: 1;">
+            Research Assistant at Columbia University's GenAI Research Lab, developing novel prompt frameworks 
+            for LLM-based stock trading. Achieved 18% ROI and 54% win rate in trading simulations using 
+            Reinforcement Learning from Market Feedback.
+          </p>
+          <div class="research-card-links">
+            <a href="#" target="_blank" title="More Info">
+              <i data-lucide="external-link" class="icon"></i>
+            </a>
+            <a href="#" target="_blank" title="Publications">
+              <i data-lucide="book-open" class="icon"></i>
+            </a>
+          </div>
+        </div>
+        <div class="research-card">
+          <div class="research-card-header">
+            <h3>AI Systems Development</h3>
+          </div>
+          <p style="color: var(--text-secondary); flex-grow: 1;">
+            Contributing to ML-Commons plugin development at AWS OpenSearch, improving system reliability and 
+            test coverage. Designed automated performance benchmarking framework for ML models in CI/CD pipeline.
+          </p>
+          <div class="research-card-links">
+            <a href="#" target="_blank" title="More Info">
+              <i data-lucide="external-link" class="icon"></i>
+            </a>
+            <a href="#" target="_blank" title="Publications">
+              <i data-lucide="book-open" class="icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <main class="container">
-        <div class="profile-image">
-            <img src="high-res-pfp-linkedin.png" alt="Arnav Grover" class="profile-image">
+    <section>
+      <h2 class="section-title">Projects</h2>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search projects by name or tags..." id="projectSearch">
+      </div>
+      <div class="project-grid" id="projectGrid">
+        <div class="project-card" data-tags="ai,finance,nlp,automation">
+          <h3>Onyx - AI Financial Document Review</h3>
+          <p class="project-description">
+            A sophisticated AI-powered platform that revolutionizes the way financial documents are analyzed. 
+            Built with cutting-edge OCR technology and advanced RAG architectures, Onyx streamlines the M&A 
+            due diligence process by automatically extracting key metrics, identifying risk factors, and 
+            providing comprehensive investment evaluations based on historical market trends and company performance indicators.
+          </p>
+          <div class="tag-and-links">
+            <div class="tag-container">
+              <span class="tag tag-ai">AI</span>
+              <span class="tag tag-finance">Finance</span>
+              <span class="tag tag-nlp">NLP</span>
+              <span class="tag tag-automation">Automation</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Arnav-Gr0ver/onyx" target="_blank" title="View Code">
+                <i data-lucide="github" class="icon"></i>
+              </a>
+              <a href="https://onyx-demo.example.com" target="_blank" title="Live Demo">
+                <i data-lucide="external-link" class="icon"></i>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div class="hero">
-            <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1.5rem;">Arnav Grover</h1>
-            <p style="color: var(--text-secondary); font-size: 1.125rem;">
-                Undergraduate Researcher at Purdue University, focusing on responsible AI governance, alignment, and quantitative finance. 
-                Committed to developing AI systems that are ethically robust, transparent, and beneficial to society.
-            </p>
+        <div class="project-card" data-tags="ml,trading,reinforcement-learning">
+          <h3>FinRL Trading System</h3>
+          <p class="project-description">
+            An innovative algorithmic trading platform that leverages the power of large language models and 
+            reinforcement learning to make intelligent trading decisions. The system incorporates real-time 
+            market data analysis, sentiment analysis from financial news, and advanced portfolio optimization 
+            techniques to achieve consistent returns while managing risk exposure through adaptive position sizing.
+          </p>
+          <div class="tag-and-links">
+            <div class="tag-container">
+              <span class="tag tag-ml">ML</span>
+              <span class="tag tag-trading">Trading</span>
+              <span class="tag tag-rl">RL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Arnav-Gr0ver/finrl-trading" target="_blank" title="View Code">
+                <i data-lucide="github" class="icon"></i>
+              </a>
+              <a href="https://finrl-demo.example.com" target="_blank" title="Live Demo">
+                <i data-lucide="external-link" class="icon"></i>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <section>
-            <h2 class="section-title">Research Experience</h2>
-            <div class="research-grid">
-                <div class="research-card">
-                    <div class="research-card-header">
-                        <h3>AI Governance & Labor Markets</h3>
-                    </div>
-                    <p style="color: var(--text-secondary); flex-grow: 1;">
-                        Leading PRISMA-guided systematic literature review at Purdue's Governance & Responsible AI Lab, 
-                        synthesizing 24 years of AI and automation findings. Developing comprehensive frameworks for 
-                        workforce policy and AI regulation stakeholders.
-                    </p>
-                </div>
-                <div class="research-card">
-                    <div class="research-card-header">
-                        <h3>Quantitative Trading & GenAI</h3>
-                    </div>
-                    <p style="color: var(--text-secondary); flex-grow: 1;">
-                        Research Assistant at Columbia University's GenAI Research Lab, developing novel prompt frameworks 
-                        for LLM-based stock trading. Achieved 18% ROI and 54% win rate in trading simulations using 
-                        Reinforcement Learning from Market Feedback.
-                    </p>
-                </div>
-                <div class="research-card">
-                    <div class="research-card-header">
-                        <h3>AI Systems Development</h3>
-                    </div>
-                    <p style="color: var(--text-secondary); flex-grow: 1;">
-                        Contributing to ML-Commons plugin development at AWS OpenSearch, improving system reliability and 
-                        test coverage. Designed automated performance benchmarking framework for ML models in CI/CD pipeline.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <section>
+      <h2 class="section-title">Awards & Recognition</h2>
+      <div class="award-section">
+        <div class="award-card">
+          <i data-lucide="award" class="icon" style="color: #fbbf24;"></i>
+          <div>
+            <h3>ICAIF 2024 FinRL Challenge</h3>
+            <p style="color: var(--text-secondary);">1st Place</p>
+          </div>
+        </div>
+        <div class="award-card">
+          <i data-lucide="trophy" class="icon" style="color: #10b981;"></i>
+          <div>
+            <h3>NFTE World Series of Innovation</h3>
+            <p style="color: var(--text-secondary);">1st Place</p>
+          </div>
+        </div>
+        <div class="award-card">
+          <i data-lucide="award" class="icon" style="color: #3b82f6;"></i>
+          <div>
+            <h3>Milton Fisher Scholarship</h3>
+            <p style="color: var(--text-secondary);">Innovation and Creativity Awardee</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section>
-            <h2 class="section-title">Projects</h2>
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search projects by name or tags..." id="projectSearch">
-            </div>
-            <div class="project-grid" id="projectGrid">
-                <div class="project-card" data-tags="ai,finance,nlp,automation">
-                    <h3>Onyx - AI Financial Document Review</h3>
-                    <p class="project-description">
-                        A sophisticated AI-powered platform that revolutionizes the way financial documents are analyzed. 
-                        Built with cutting-edge OCR technology and advanced RAG architectures, Onyx streamlines the M&A 
-                        due diligence process by automatically extracting key metrics, identifying risk factors, and 
-                        providing comprehensive investment evaluations based on historical market trends and company performance indicators.
-                    </p>
-                    <div class="tag-container">
-                        <span class="tag tag-ai">AI</span>
-                        <span class="tag tag-finance">Finance</span>
-                        <span class="tag tag-nlp">NLP</span>
-                        <span class="tag tag-automation">Automation</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Arnav-Gr0ver/onyx" target="_blank" title="View Code">
-                            <i data-lucide="github" class="icon"></i>
-                        </a>
-                        <a href="https://onyx-demo.example.com" target="_blank" title="Live Demo">
-                            <i data-lucide="external-link" class="icon"></i>
-                        </a>
-                    </div>
-                </div>
+    <section>
+      <h2 class="section-title">Contact</h2>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 1rem;">
+        <i data-lucide="mail" class="icon"></i>
+        <a href="mailto:research.ai@university.edu" style="color: var(--text-primary); text-decoration: none; font-size: 1.125rem;">
+          research.ai@university.edu
+        </a>
+      </div>
+    </section>
+  </main>
 
-                <div class="project-card" data-tags="ml,trading,reinforcement-learning">
-                    <h3>FinRL Trading System</h3>
-                    <p class="project-description">
-                        An innovative algorithmic trading platform that leverages the power of large language models and 
-                        reinforcement learning to make intelligent trading decisions. The system incorporates real-time 
-                        market data analysis, sentiment analysis from financial news, and advanced portfolio optimization 
-                        techniques to achieve consistent returns while managing risk exposure through adaptive position sizing.
-                    </p>
-                    <div class="tag-container">
-                        <span class="tag tag-ml">ML</span>
-                        <span class="tag tag-trading">Trading</span>
-                        <span class="tag tag-rl">RL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Arnav-Gr0ver/finrl-trading" target="_blank" title="View Code">
-                            <i data-lucide="github" class="icon"></i>
-                        </a>
-                        <a href="https://finrl-demo.example.com" target="_blank" title="Live Demo">
-                            <i data-lucide="external-link" class="icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <footer>
+    <p>&copy; 2024 Arnav Grover. All Rights Reserved.</p>
+  </footer>
 
-        <section>
-            <h2 class="section-title">Awards & Recognition</h2>
-            <div class="award-section">
-                <div class="award-card">
-                    <i data-lucide="award" class="icon" style="color: #fbbf24;"></i>
-                    <div>
-                        <h3>ICAIF 2024 FinRL Challenge</h3>
-                        <p style="color: var(--text-secondary);">1st Place</p>
-                    </div>
-                </div>
-                <div class="award-card">
-                    <i data-lucide="trophy" class="icon" style="color: #10b981;"></i>
-                    <div>
-                        <h3>NFTE World Series of Innovation</h3>
-                        <p style="color: var(--text-secondary);">1st Place</p>
-                    </div>
-                </div>
-                <div class="award-card">
-                    <i data-lucide="award" class="icon" style="color: #3b82f6;"></i>
-                    <div>
-                        <h3>Milton Fisher Scholarship</h3>
-                        <p style="color: var(--text-secondary);">Innovation and Creativity Awardee</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
+  <script>
+    lucide.createIcons();
+    const projectSearch = document.getElementById('projectSearch');
+    const projectGrid = document.getElementById('projectGrid');
+    const projectCards = projectGrid.getElementsByClassName('project-card');
 
-        <section>
-            <h2 class="section-title">Contact</h2>
-            <div style="display: flex; justify-content: center; align-items: center; gap: 1rem;">
-                <i data-lucide="mail" class="icon"></i>
-                <a href="mailto:research.ai@university.edu" style="color: var(--text-primary); text-decoration: none; font-size: 1.125rem;">
-                    research.ai@university.edu
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Arnav Grover. All Rights Reserved.</p>
-    </footer>
-
-    <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
-    <script>
-        lucide.createIcons();
-        const projectSearch = document.getElementById('projectSearch');
-        const projectGrid = document.getElementById('projectGrid');
-        const projectCards = projectGrid.getElementsByClassName('project-card');
-
-        projectSearch.addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            
-            Array.from(projectCards).forEach(card => {
-                const tags = card.getAttribute('data-tags').toLowerCase();
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const description = card.querySelector('.project-description').textContent.toLowerCase();
-                
-                if (tags.includes(searchTerm) || title.includes(searchTerm) || description.includes(searchTerm)) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    </script>
+    projectSearch.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase().trim();
+      Array.from(projectCards).forEach(card => {
+        const tagsAttr = card.getAttribute('data-tags').toLowerCase();
+        const tags = tagsAttr.split(',').map(tag => tag.trim());
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('.project-description').textContent.toLowerCase();
+        const tagMatch = tags.some(tag => tag.includes(searchTerm));
+        if (tagMatch || title.includes(searchTerm) || description.includes(searchTerm)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
