@@ -12,6 +12,7 @@
             --text-secondary: #d1d5db;
             --border-color: #1f2937;
             --hover-color: #4b5563;
+            --tag-bg: #374151;
         }
         * {
             margin: 0;
@@ -158,6 +159,84 @@
             transform: translateY(-5px);
             border-color: var(--hover-color);
         }
+        .search-container {
+            margin-bottom: 2rem;
+        }
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .project-card {
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--hover-color);
+        }
+        .tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            color: white;
+            font-weight: 500;
+        }
+        .tag-ai { background-color: #2563eb; }
+        .tag-finance { background-color: #059669; }
+        .tag-nlp { background-color: #7c3aed; }
+        .tag-automation { background-color: #dc2626; }
+        .tag-ml { background-color: #9333ea; }
+        .tag-trading { background-color: #0891b2; }
+        .tag-rl { background-color: #ea580c; }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: flex-end;
+        }
+        .project-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            background: var(--border-color);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        .project-links a:hover {
+            background: var(--hover-color);
+            transform: translateY(-2px);
+        }
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .project-description {
+            margin: 1rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
         section {
             margin-bottom: 4rem;
         }
@@ -172,7 +251,7 @@
             .navbar-content {
                 padding: 0 1rem;
             }
-            .research-grid, .award-section {
+            .research-grid, .award-section, .project-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -205,84 +284,97 @@
         <div class="hero">
             <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1.5rem;">Arnav Grover</h1>
             <p style="color: var(--text-secondary); font-size: 1.125rem;">
-                Researching at the intersection of responsible AI governance, alignment, and quantitative finance. Committed to developing AI systems that are ethically robust, transparent, and beneficial to society.
+                Undergraduate Researcher at Purdue University, focusing on responsible AI governance, alignment, and quantitative finance. 
+                Committed to developing AI systems that are ethically robust, transparent, and beneficial to society.
             </p>
         </div>
 
         <section>
-            <h2 class="section-title">Research Focus</h2>
+            <h2 class="section-title">Research Experience</h2>
             <div class="research-grid">
                 <div class="research-card">
                     <div class="research-card-header">
-                        <h3>AI Safety & Alignment</h3>
-                        <a href="/research/ai-safety">
-                            <i data-lucide="external-link" class="icon"></i>
-                        </a>
+                        <h3>AI Governance & Labor Markets</h3>
                     </div>
                     <p style="color: var(--text-secondary); flex-grow: 1;">
-                        Developing comprehensive frameworks for ensuring AI systems remain aligned with human values through interpretability, 
-                        game-theoretic modeling, and ethical constraint enforce
+                        Leading PRISMA-guided systematic literature review at Purdue's Governance & Responsible AI Lab, 
+                        synthesizing 24 years of AI and automation findings. Developing comprehensive frameworks for 
+                        workforce policy and AI regulation stakeholders.
                     </p>
                 </div>
                 <div class="research-card">
                     <div class="research-card-header">
-                        <h3>Economic AI Impact</h3>
-                        <a href="/research/economic-impact">
-                            <i data-lucide="external-link" class="icon"></i>
-                        </a>
+                        <h3>Quantitative Trading & GenAI</h3>
                     </div>
                     <p style="color: var(--text-secondary); flex-grow: 1;">
-                        Quantitative research on AI's labor market transformation, focusing on skill displacement, 
-                        economic redistribution, and strategies for inclusive technological transition.
+                        Research Assistant at Columbia University's GenAI Research Lab, developing novel prompt frameworks 
+                        for LLM-based stock trading. Achieved 18% ROI and 54% win rate in trading simulations using 
+                        Reinforcement Learning from Market Feedback.
                     </p>
                 </div>
                 <div class="research-card">
                     <div class="research-card-header">
-                        <h3>AI Governance</h3>
-                        <a href="/research/governance">
-                            <i data-lucide="external-link" class="icon"></i>
-                        </a>
+                        <h3>AI Systems Development</h3>
                     </div>
                     <p style="color: var(--text-secondary); flex-grow: 1;">
-                        Interdisciplinary approach to developing regulatory frameworks and ethical guidelines 
-                        for responsible AI development across academic, industrial, and governmental domains.
+                        Contributing to ML-Commons plugin development at AWS OpenSearch, improving system reliability and 
+                        test coverage. Designed automated performance benchmarking framework for ML models in CI/CD pipeline.
                     </p>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">Key Publications</h2>
-            <div class="publication-list">
-                <div class="publication-card">
-                    <div class="research-card-header">
-                        <h3>Ethical Trajectories in AI Decision Systems</h3>
-                        <a href="/publications/ethical-ai">
-                            <i data-lucide="code" class="icon"></i>
+            <h2 class="section-title">Projects</h2>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search projects by name or tags..." id="projectSearch">
+            </div>
+            <div class="project-grid" id="projectGrid">
+                <div class="project-card" data-tags="ai,finance,nlp,automation">
+                    <h3>Onyx - AI Financial Document Review</h3>
+                    <p class="project-description">
+                        A sophisticated AI-powered platform that revolutionizes the way financial documents are analyzed. 
+                        Built with cutting-edge OCR technology and advanced RAG architectures, Onyx streamlines the M&A 
+                        due diligence process by automatically extracting key metrics, identifying risk factors, and 
+                        providing comprehensive investment evaluations based on historical market trends and company performance indicators.
+                    </p>
+                    <div class="tag-container">
+                        <span class="tag tag-ai">AI</span>
+                        <span class="tag tag-finance">Finance</span>
+                        <span class="tag tag-nlp">NLP</span>
+                        <span class="tag tag-automation">Automation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Arnav-Gr0ver/onyx" target="_blank" title="View Code">
+                            <i data-lucide="github" class="icon"></i>
+                        </a>
+                        <a href="https://onyx-demo.example.com" target="_blank" title="Live Demo">
+                            <i data-lucide="external-link" class="icon"></i>
                         </a>
                     </div>
-                    <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 0.5rem;">
-                        Journal of AI Ethics (2024) | Cited: 42
-                    </p>
-                    <p style="color: var(--text-secondary);">
-                        Computational framework for measuring and enforcing ethical constraints in autonomous systems, 
-                        introducing novel quantitative metrics for value alignment.
-                    </p>
                 </div>
-                <div class="publication-card">
-                    <div class="research-card-header">
-                        <h3>AI Labor Market Transformation</h3>
-                        <a href="/publications/labor-dynamics">
-                            <i data-lucide="code" class="icon"></i>
+
+                <div class="project-card" data-tags="ml,trading,reinforcement-learning">
+                    <h3>FinRL Trading System</h3>
+                    <p class="project-description">
+                        An innovative algorithmic trading platform that leverages the power of large language models and 
+                        reinforcement learning to make intelligent trading decisions. The system incorporates real-time 
+                        market data analysis, sentiment analysis from financial news, and advanced portfolio optimization 
+                        techniques to achieve consistent returns while managing risk exposure through adaptive position sizing.
+                    </p>
+                    <div class="tag-container">
+                        <span class="tag tag-ml">ML</span>
+                        <span class="tag tag-trading">Trading</span>
+                        <span class="tag tag-rl">RL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Arnav-Gr0ver/finrl-trading" target="_blank" title="View Code">
+                            <i data-lucide="github" class="icon"></i>
+                        </a>
+                        <a href="https://finrl-demo.example.com" target="_blank" title="Live Demo">
+                            <i data-lucide="external-link" class="icon"></i>
                         </a>
                     </div>
-                    <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 0.5rem;">
-                        International Economic Review (2023) | Cited: 36
-                    </p>
-                    <p style="color: var(--text-secondary);">
-                        Comprehensive economic modeling of AI-driven workforce evolution, predicting skill ecosystem 
-                        changes and proposing adaptive workforce development strategies.
-                    </p>
                 </div>
             </div>
         </section>
@@ -293,22 +385,22 @@
                 <div class="award-card">
                     <i data-lucide="award" class="icon" style="color: #fbbf24;"></i>
                     <div>
-                        <h3>AI Ethics Research Grant</h3>
-                        <p style="color: var(--text-secondary);">Stanford Center for Responsible AI, 2024</p>
+                        <h3>ICAIF 2024 FinRL Challenge</h3>
+                        <p style="color: var(--text-secondary);">1st Place</p>
                     </div>
                 </div>
                 <div class="award-card">
-                    <i data-lucide="book" class="icon" style="color: #10b981;"></i>
+                    <i data-lucide="trophy" class="icon" style="color: #10b981;"></i>
                     <div>
-                        <h3>Best Interdisciplinary Research Paper</h3>
-                        <p style="color: var(--text-secondary);">Global AI Conference, 2023</p>
+                        <h3>NFTE World Series of Innovation</h3>
+                        <p style="color: var(--text-secondary);">1st Place</p>
                     </div>
                 </div>
                 <div class="award-card">
-                    <i data-lucide="trending-up" class="icon" style="color: #3b82f6;"></i>
+                    <i data-lucide="award" class="icon" style="color: #3b82f6;"></i>
                     <div>
-                        <h3>Early Career Researcher Award</h3>
-                        <p style="color: var(--text-secondary);">International AI Research Association, 2022</p>
+                        <h3>Milton Fisher Scholarship</h3>
+                        <p style="color: var(--text-secondary);">Innovation and Creativity Awardee</p>
                     </div>
                 </div>
             </div>
@@ -326,12 +418,32 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Dr. AI Ethics Researcher. All Rights Reserved.</p>
+        <p>&copy; 2024 Arnav Grover. All Rights Reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
     <script>
         lucide.createIcons();
+        const projectSearch = document.getElementById('projectSearch');
+        const projectGrid = document.getElementById('projectGrid');
+        const projectCards = projectGrid.getElementsByClassName('project-card');
+
+        projectSearch.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            Array.from(projectCards).forEach(card => {
+                const tags = card.getAttribute('data-tags').toLowerCase();
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('.project-description').textContent.toLowerCase();
+                
+                if (tags.includes(searchTerm) || title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
     </script>
+
 </body>
 </html>
