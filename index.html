@@ -16,13 +16,14 @@
             margin: 0 auto;
             padding: 40px 20px;
             text-align: center;
+            position: relative;
         }
         header {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
         .profile-photo {
             width: 180px;
@@ -36,11 +37,13 @@
         h1 {
             font-size: 2.5rem;
             margin: 0;
+            padding: 0;
             font-weight: 500;
         }
         .subtitle {
             font-size: 1.2rem;
-            margin: 0;
+            margin-top: 5px;
+            margin-bottom: 10px;
             color: #555;
             font-weight: 300;
         }
@@ -80,48 +83,7 @@
         .link-item:hover {
             background-color: #e5e5e5;
         }
-        .updates-list {
-            position: relative;
-            list-style: none;
-            padding: 0;
-            margin: 0 auto;
-            max-width: 600px;
-        }
-        .updates-list:before {
-            content: "";
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #eee;
-        }
-        .update-item {
-            position: relative;
-            padding: 10px 0 10px 40px;
-        }
-        .update-item:before {
-            content: "";
-            position: absolute;
-            left: 12px;
-            top: 12px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #d32f2f;
-        }
-        .update-date {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 4px;
-        }
-        .update-title {
-            font-weight: 500;
-            margin: 0;
-        }
-        .update-desc {
-            margin: 4px 0 0 0;
-        }
+        .updates-list,
         .publications {
             list-style-type: none;
             padding: 0;
@@ -129,12 +91,52 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        .update-item,
         .pub-item {
             margin-bottom: 24px;
+            position: relative;
+            padding-left: 30px;
         }
+        /* Timeline styling */
+        .update-item {
+            position: relative;
+        }
+        .update-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #d32f2f;
+            z-index: 2;
+        }
+        .update-item:after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 22px;
+            width: 2px;
+            height: calc(100% + 14px);
+            background-color: #ddd;
+            z-index: 1;
+        }
+        .update-item:last-child:after {
+            display: none;
+        }
+        .update-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+        .update-title,
         .pub-title {
             font-weight: 500;
-            margin-bottom: 4px;
+            margin: 0;
+        }
+        .update-desc {
+            margin: 4px 0 0 0;
         }
         .pub-authors,
         .pub-venue {
@@ -160,7 +162,7 @@
 </head>
 <body>
     <header id="profile">
-        <img src="assets/high-res.png" alt="Profile Photo" class="profile-photo">
+        <img src="assets/high-res-pfp-linkedin.png" alt="Profile Photo" class="profile-photo">
         <div class="header-text">
             <h1>Arnav Grover</h1>
             <p class="subtitle">CS @ Purdue University | Undergraduate Researcher // Developing Responsible Models for Financial Markets</p>
@@ -169,6 +171,7 @@
 
     <section id="about" class="about">
         <p>I'm an Applied ML Researcher; I develop responsible models for financial markets.</p>
+        <p>Previously, I contributed to organizing large-scale AI hackathons and served on technical committees to advance benchmarks in financial reinforcement learning.</p>
     </section>
 
     <section id="updates">
@@ -177,17 +180,17 @@
             <li class="update-item">
                 <div class="update-date">April 2025</div>
                 <h3 class="update-title">Seminar on Responsible Financial Modeling</h3>
-                <p class="update-desc">Delivered a seminar at Purdue University detailing our approach to ethical, high-fidelity financial prediction models. <a href="https://www.youtube.com/watch?v=tvaNIU91rNc&t=336s" target="_blank">Watch the session</a>.</p>
+                <p class="update-desc">Delivered a detailed seminar at Purdue University on our framework for creating ethical, high-fidelity financial prediction models. <a href="https://www.youtube.com/watch?v=tvaNIU91rNc&t=336s" target="_blank">Watch the session</a>.</p>
             </li>
             <li class="update-item">
                 <div class="update-date">March 2025</div>
-                <h3 class="update-title">FinRL Contest 2025 Technical Committee</h3>
-                <p class="update-desc">Served on the technical committee for the <a href="https://open-finance-lab.github.io/FinRL_Contest_2025/" target="_blank">FinRL Contest 2025</a>, shaping benchmarks for financial reinforcement learning challenges.</p>
+                <h3 class="update-title">Technical Committee Member, FinRL Contest 2025</h3>
+                <p class="update-desc">Contributed to the design of challenge benchmarks and evaluation criteria for the <a href="https://open-finance-lab.github.io/FinRL_Contest_2025/" target="_blank">2025 FinRL Contest</a>, advancing research in financial reinforcement learning.</p>
             </li>
             <li class="update-item">
                 <div class="update-date">February 2025</div>
-                <h3 class="update-title">Catapult 2025 Hackathon Organizer</h3>
-                <p class="update-desc">Co-led the programming tracks at Purdue’s Catapult 2025 AI × Startup hackathon, empowering teams to build innovative fintech solutions. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7304184969428434944/" target="_blank">View highlights</a>.</p>
+                <h3 class="update-title">Organized Catapult 2025 Hackathon</h3>
+                <p class="update-desc">Coordinated logistics and led programming tracks for Purdue's Catapult 2025 AI × Startup hackathon, empowering teams to build innovative financial technology solutions. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7304184969428434944/" target="_blank">View highlights</a>.</p>
             </li>
         </ul>
     </section>
