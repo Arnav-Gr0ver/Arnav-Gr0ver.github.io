@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Profile</title>
+    <title>Arnav Grover | Portfolio</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -80,14 +80,16 @@
             background-color: #e5e5e5;
             text-decoration: none;
         }
-        .updates-list {
+        .updates-list,
+        .publications {
             list-style-type: none;
             padding: 0;
             text-align: left;
             max-width: 600px;
             margin: 0 auto;
         }
-        .update-item {
+        .update-item,
+        .pub-item {
             margin-bottom: 24px;
             position: relative;
             padding-left: 20px;
@@ -114,28 +116,17 @@
         .update-desc {
             margin: 4px 0 0 0;
         }
-        .publications {
-            list-style-type: none;
-            padding: 0;
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .pub-item {
-            margin-bottom: 24px;
-        }
         .pub-title {
             font-weight: 500;
             margin-bottom: 4px;
         }
-        .pub-authors {
+        .pub-authors,
+        .pub-venue {
             font-size: 0.9rem;
             color: #555;
         }
         .pub-venue {
             font-style: italic;
-            font-size: 0.9rem;
-            color: #555;
         }
         footer {
             font-size: 0.9rem;
@@ -144,25 +135,19 @@
             padding-top: 20px;
             border-top: 1px solid #eee;
         }
-        .about {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-        }
     </style>
 </head>
 <body>
     <header>
         <img src="/api/placeholder/120/120" alt="Profile Photo" class="profile-photo">
         <div class="header-text">
-            <h1>Your Name</h1>
-            <p class="subtitle">Research Scientist | Your Institution</p>
+            <h1>Arnav Grover</h1>
+            <p class="subtitle">CS @ Purdue University | Undergraduate Researcher</p>
         </div>
     </header>
 
     <section class="about">
-        <p>I am a researcher focused on [your research area]. My work explores [brief description of your research focus]. Previously, I was at [previous affiliation] working on [previous work].</p>
-        <p>I'm interested in [list of research interests and topics].</p>
+        <p>I'm an Applied ML Researcher; I develop responsible models for financial markets.</p>
     </section>
 
     <section>
@@ -170,23 +155,18 @@
         <ul class="updates-list">
             <li class="update-item">
                 <div class="update-date">April 2025</div>
-                <h3 class="update-title">Research Talk at [Conference/University]</h3>
-                <p class="update-desc">Presented our latest work on [Topic] to an audience of researchers and industry professionals.</p>
+                <h3 class="update-title">Research Talk at Purdue University</h3>
+                <p class="update-desc">Presented our latest work on responsible financial modeling. <a href="https://www.youtube.com/watch?v=tvaNIU91rNc&t=336s" target="_blank">Watch the talk</a>.</p>
             </li>
             <li class="update-item">
                 <div class="update-date">March 2025</div>
-                <h3 class="update-title">[Hackathon Name] Hackathon</h3>
-                <p class="update-desc">Led a team that developed [Project Name], addressing the challenge of [problem statement].</p>
+                <h3 class="update-title">Technical Committee Member for FinRL Contest 2025</h3>
+                <p class="update-desc">Contributed to benchmark development on the <a href="https://open-finance-lab.github.io/FinRL_Contest_2025/" target="_blank">FinRL Contest 2025</a> technical committee.</p>
             </li>
             <li class="update-item">
                 <div class="update-date">February 2025</div>
-                <h3 class="update-title">Paper Accepted at [Conference/Journal]</h3>
-                <p class="update-desc">Our work "[Paper Title]" was accepted for publication. This research introduces [brief description].</p>
-            </li>
-            <li class="update-item">
-                <div class="update-date">January 2025</div>
-                <h3 class="update-title">Open-source Release</h3>
-                <p class="update-desc">Released the implementation of [Algorithm/Method] on GitHub, which enables [brief description of capabilities].</p>
+                <h3 class="update-title">Organized Catapult 2025 Hackathon</h3>
+                <p class="update-desc">Played a key role in organizing <a href="https://www.linkedin.com/feed/update/urn:li:activity:7304184969428434944/" target="_blank">Catapult 2025</a>, fostering innovation in financial technologies.</p>
             </li>
         </ul>
     </section>
@@ -195,19 +175,10 @@
         <h2>Publications</h2>
         <ul class="publications">
             <li class="pub-item">
-                <div class="pub-title">[Paper Title 1]</div>
-                <div class="pub-authors">Your Name, Co-author 1, Co-author 2</div>
-                <div class="pub-venue">Conference/Journal Name, 2025</div>
-            </li>
-            <li class="pub-item">
-                <div class="pub-title">[Paper Title 2]</div>
-                <div class="pub-authors">Your Name, Co-author 1, Co-author 2</div>
-                <div class="pub-venue">Conference/Journal Name, 2024</div>
-            </li>
-            <li class="pub-item">
-                <div class="pub-title">[Paper Title 3]</div>
-                <div class="pub-authors">Your Name, Co-author 1, Co-author 2</div>
-                <div class="pub-venue">Conference/Journal Name, 2024</div>
+                <div class="pub-title">Preprint: FinRLlama: A Solution to LLM-Engineered Signals Challenge at FinRL Contest 2024</div>
+                <div class="pub-authors">Arnav Grover</div>
+                <div class="pub-venue">arXiv preprint arXiv:2502.01992, 2025</div>
+                <p><a href="https://arxiv.org/abs/2502.01992" target="_blank">Read on arXiv</a></p>
             </li>
         </ul>
     </section>
@@ -215,13 +186,13 @@
     <section>
         <h2>Links</h2>
         <div class="links">
-            <a href="https://scholar.google.com/citations?user=your_id" class="link-item" target="_blank">Google Scholar</a>
-            <a href="https://github.com/your-username" class="link-item" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/your-profile" class="link-item" target="_blank">LinkedIn</a>
-            <a href="https://x.com/your_handle" class="link-item" target="_blank">X</a>
-            <a href="https://www.researchgate.net/profile/Your_Profile" class="link-item" target="_blank">ResearchGate</a>
-            <a href="https://arxiv.org/search/?searchtype=author&query=your+name" class="link-item" target="_blank">arXiv</a>
-            <a href="https://paperswithcode.com/search?q=author%3Ayour+name" class="link-item" target="_blank">Papers with Code</a>
+            <a href="https://scholar.google.com/citations?user=UcFqXasAAAAJ" class="link-item" target="_blank">Google Scholar</a>
+            <a href="https://github.com/Arnav-Gr0ver" class="link-item" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/arnav-grover" class="link-item" target="_blank">LinkedIn</a>
+            <a href="https://x.com/Arnav_Grover" class="link-item" target="_blank">X</a>
+            <a href="https://www.researchgate.net/profile/Arnav-Grover" class="link-item" target="_blank">ResearchGate</a>
+            <a href="https://arxiv.org/search/?searchtype=author&query=Arnav+Grover" class="link-item" target="_blank">arXiv</a>
+            <a href="https://paperswithcode.com/search?q=author%3AArnav+Grover" class="link-item" target="_blank">Papers with Code</a>
             <a href="https://discord.gg/your-server" class="link-item" target="_blank">Discord</a>
         </div>
     </section>
