@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnav Grover | Portfolio</title>
+    <title>Research Profile</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnH2N2u1qgKXwT8Xb8prV9V1Z4Pv1tWZ6l1XK8G3F5YZp3X1R5aWRrRZ5Z5XwX5l2hZ6G1fDw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -14,6 +16,33 @@
             margin: 0 auto;
             padding: 40px 20px;
             text-align: center;
+            position: relative;
+        }
+        /* Sidebar dot navigation */
+        .dot-nav {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .dot-nav li a {
+            display: block;
+            width: 12px;
+            height: 12px;
+            background-color: #333;
+            border-radius: 50%;
+            text-indent: -9999px;
+            transition: background-color 0.2s;
+        }
+        .dot-nav li a:hover,
+        .dot-nav li a:focus {
+            background-color: #d32f2f;
         }
         header {
             margin-bottom: 40px;
@@ -78,7 +107,6 @@
         }
         .link-item:hover {
             background-color: #e5e5e5;
-            text-decoration: none;
         }
         .updates-list,
         .publications {
@@ -109,16 +137,13 @@
             font-size: 0.9rem;
             margin-bottom: 4px;
         }
-        .update-title {
+        .update-title,
+        .pub-title {
             font-weight: 500;
             margin: 0;
         }
         .update-desc {
             margin: 4px 0 0 0;
-        }
-        .pub-title {
-            font-weight: 500;
-            margin-bottom: 4px;
         }
         .pub-authors,
         .pub-venue {
@@ -135,65 +160,77 @@
             padding-top: 20px;
             border-top: 1px solid #eee;
         }
+        .about {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <img src="/api/placeholder/120/120" alt="Profile Photo" class="profile-photo">
+    <!-- Sidebar Navigation -->
+    <ul class="dot-nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#updates">Updates</a></li>
+        <li><a href="#publications">Publications</a></li>
+    </ul>
+
+    <header id="profile">
+        <img src="assets/high-res.png" alt="Profile Photo" class="profile-photo">
         <div class="header-text">
             <h1>Arnav Grover</h1>
-            <p class="subtitle">CS @ Purdue University | Undergraduate Researcher</p>
+            <p class="subtitle">Applied ML Researcher | CS @ Purdue University</p>
         </div>
     </header>
 
-    <section class="about">
-        <p>I'm an Applied ML Researcher; I develop responsible models for financial markets.</p>
+    <section id="about" class="about">
+        <p>I'm an Applied ML Researcher developing responsible models for financial markets. My work explores the intersection of machine learning and quantitative finance, with a focus on ethical, transparent, and robust model design.</p>
+        <p>Previously, I contributed to organizing large-scale AI hackathons and served on technical committees to advance benchmarks in financial reinforcement learning.</p>
     </section>
 
-    <section>
-        <h2>Recent Updates</h2>
+    <section id="updates">
+        <h2>Highlights</h2>
         <ul class="updates-list">
             <li class="update-item">
                 <div class="update-date">April 2025</div>
-                <h3 class="update-title">Research Talk at Purdue University</h3>
-                <p class="update-desc">Presented our latest work on responsible financial modeling. <a href="https://www.youtube.com/watch?v=tvaNIU91rNc&t=336s" target="_blank">Watch the talk</a>.</p>
+                <h3 class="update-title">Seminar on Responsible Financial Modeling</h3>
+                <p class="update-desc">Delivered a detailed seminar at Purdue University on our framework for creating ethical, high-fidelity financial prediction models. <a href="https://www.youtube.com/watch?v=tvaNIU91rNc&t=336s" target="_blank">Watch the session</a>.</p>
             </li>
             <li class="update-item">
                 <div class="update-date">March 2025</div>
-                <h3 class="update-title">Technical Committee Member for FinRL Contest 2025</h3>
-                <p class="update-desc">Contributed to benchmark development on the <a href="https://open-finance-lab.github.io/FinRL_Contest_2025/" target="_blank">FinRL Contest 2025</a> technical committee.</p>
+                <h3 class="update-title">Technical Committee Member, FinRL Contest 2025</h3>
+                <p class="update-desc">Contributed to the design of challenge benchmarks and evaluation criteria for the <a href="https://open-finance-lab.github.io/FinRL_Contest_2025/" target="_blank">2025 FinRL Contest</a>, advancing research in financial reinforcement learning.</p>
             </li>
             <li class="update-item">
                 <div class="update-date">February 2025</div>
                 <h3 class="update-title">Organized Catapult 2025 Hackathon</h3>
-                <p class="update-desc">Played a key role in organizing <a href="https://www.linkedin.com/feed/update/urn:li:activity:7304184969428434944/" target="_blank">Catapult 2025</a>, fostering innovation in financial technologies.</p>
+                <p class="update-desc">Coordinated logistics and led programming tracks for Purdue's Catapult 2025 AI × Startup hackathon, empowering teams to build innovative financial technology solutions. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7304184969428434944/" target="_blank">View highlights</a>.</p>
             </li>
         </ul>
     </section>
 
-    <section>
+    <section id="publications">
         <h2>Publications</h2>
         <ul class="publications">
             <li class="pub-item">
-                <div class="pub-title">Preprint: FinRLlama: A Solution to LLM-Engineered Signals Challenge at FinRL Contest 2024</div>
+                <div class="pub-title">FinRLlama: A Solution to LLM-Engineered Signals Challenge at FinRL Contest 2024</div>
                 <div class="pub-authors">Arnav Grover</div>
-                <div class="pub-venue">arXiv preprint arXiv:2502.01992, 2025</div>
-                <p><a href="https://arxiv.org/abs/2502.01992" target="_blank">Read on arXiv</a></p>
+                <div class="pub-venue">arXiv preprint arXiv:2502.01992, 2025 &ndash; <a href="https://arxiv.org/abs/2502.01992" target="_blank">Read on arXiv</a></div>
             </li>
         </ul>
     </section>
 
-    <section>
+    <section id="links">
         <h2>Links</h2>
         <div class="links">
-            <a href="https://scholar.google.com/citations?user=UcFqXasAAAAJ" class="link-item" target="_blank">Google Scholar</a>
-            <a href="https://github.com/Arnav-Gr0ver" class="link-item" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/arnav-grover" class="link-item" target="_blank">LinkedIn</a>
-            <a href="https://x.com/Arnav_Grover" class="link-item" target="_blank">X</a>
-            <a href="https://www.researchgate.net/profile/Arnav-Grover" class="link-item" target="_blank">ResearchGate</a>
-            <a href="https://arxiv.org/search/?searchtype=author&query=Arnav+Grover" class="link-item" target="_blank">arXiv</a>
-            <a href="https://paperswithcode.com/search?q=author%3AArnav+Grover" class="link-item" target="_blank">Papers with Code</a>
-            <a href="https://discord.gg/your-server" class="link-item" target="_blank">Discord</a>
+            <a href="https://scholar.google.com/citations?user=UcFqXasAAAAJ" class="link-item" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://github.com/Arnav-Gr0ver" class="link-item" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/arnav-grover" class="link-item" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://x.com/Arnav_Grover" class="link-item" target="_blank"><i class="fab fa-twitter"></i> X</a>
+            <a href="https://www.researchgate.net/profile/Arnav-Grover" class="link-item" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
+            <a href="https://arxiv.org/search/?searchtype=author&query=Arnav+Grover" class="link-item" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+            <a href="https://paperswithcode.com/search?q=author%3AArnav+Grover" class="link-item" target="_blank"><i class="fas fa-code"></i> Papers with Code</a>
+            <a href="https://discord.gg/your-server" class="link-item" target="_blank"><i class="fab fa-discord"></i> Discord</a>
         </div>
     </section>
 
