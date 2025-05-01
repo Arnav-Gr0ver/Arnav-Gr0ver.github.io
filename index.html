@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Profile</title>
+    <title>Arnav Grover | Portfolio</title>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnH2N2u1qgKXwT8Xb8prV9V1Z4Pv1tWZ6l1XK8G3F5YZp3X1R5aWRrRZ5Z5XwX5l2hZ6G1fDw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -16,44 +16,17 @@
             margin: 0 auto;
             padding: 40px 20px;
             text-align: center;
-            position: relative;
-        }
-        /* Sidebar dot navigation */
-        .dot-nav {
-            position: fixed;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .dot-nav li a {
-            display: block;
-            width: 12px;
-            height: 12px;
-            background-color: #333;
-            border-radius: 50%;
-            text-indent: -9999px;
-            transition: background-color 0.2s;
-        }
-        .dot-nav li a:hover,
-        .dot-nav li a:focus {
-            background-color: #d32f2f;
         }
         header {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 10px;
         }
         .profile-photo {
-            width: 120px;
-            height: 120px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
         }
@@ -63,12 +36,11 @@
         h1 {
             font-size: 2.5rem;
             margin: 0;
-            padding: 0;
             font-weight: 500;
         }
         .subtitle {
             font-size: 1.2rem;
-            margin-top: 5px;
+            margin: 0;
             color: #555;
             font-weight: 300;
         }
@@ -108,27 +80,33 @@
         .link-item:hover {
             background-color: #e5e5e5;
         }
-        .updates-list,
-        .publications {
-            list-style-type: none;
-            padding: 0;
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .update-item,
-        .pub-item {
-            margin-bottom: 24px;
+        .updates-list {
             position: relative;
-            padding-left: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .updates-list:before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #eee;
+        }
+        .update-item {
+            position: relative;
+            padding: 10px 0 10px 40px;
         }
         .update-item:before {
             content: "";
             position: absolute;
-            left: 0;
-            top: 10px;
-            width: 6px;
-            height: 6px;
+            left: 12px;
+            top: 12px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background-color: #d32f2f;
         }
@@ -137,13 +115,26 @@
             font-size: 0.9rem;
             margin-bottom: 4px;
         }
-        .update-title,
-        .pub-title {
+        .update-title {
             font-weight: 500;
             margin: 0;
         }
         .update-desc {
             margin: 4px 0 0 0;
+        }
+        .publications {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .pub-item {
+            margin-bottom: 24px;
+        }
+        .pub-title {
+            font-weight: 500;
+            margin-bottom: 4px;
         }
         .pub-authors,
         .pub-venue {
@@ -168,43 +159,35 @@
     </style>
 </head>
 <body>
-    <!-- Sidebar Navigation -->
-    <ul class="dot-nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#updates">Updates</a></li>
-        <li><a href="#publications">Publications</a></li>
-    </ul>
-
     <header id="profile">
-        <img src="assets/high-res-pfp-linkedin.png" alt="Profile Photo" class="profile-photo">
+        <img src="assets/high-res.png" alt="Profile Photo" class="profile-photo">
         <div class="header-text">
             <h1>Arnav Grover</h1>
-            <p class="subtitle">Applied ML Researcher | CS @ Purdue University</p>
+            <p class="subtitle">CS @ Purdue University | Undergraduate Researcher // Developing Responsible Models for Financial Markets</p>
         </div>
     </header>
 
     <section id="about" class="about">
-        <p>I'm an Applied ML Researcher developing responsible models for financial markets. My work explores the intersection of machine learning and quantitative finance, with a focus on ethical, transparent, and robust model design.</p>
-        <p>Previously, I contributed to organizing large-scale AI hackathons and served on technical committees to advance benchmarks in financial reinforcement learning.</p>
+        <p>I'm an Applied ML Researcher; I develop responsible models for financial markets.</p>
     </section>
 
     <section id="updates">
-        <h2>Highlights</h2>
+        <h2>Talks & News</h2>
         <ul class="updates-list">
             <li class="update-item">
                 <div class="update-date">April 2025</div>
                 <h3 class="update-title">Seminar on Responsible Financial Modeling</h3>
-                <p class="update-desc">Delivered a detailed seminar at Purdue University on our framework for creating ethical, high-fidelity financial prediction models. <a href="https://www.youtube.com/watch?v=tvaNIU91rNc&t=336s" target="_blank">Watch the session</a>.</p>
+                <p class="update-desc">Delivered a seminar at Purdue University detailing our approach to ethical, high-fidelity financial prediction models. <a href="https://www.youtube.com/watch?v=tvaNIU91rNc&t=336s" target="_blank">Watch the session</a>.</p>
             </li>
             <li class="update-item">
                 <div class="update-date">March 2025</div>
-                <h3 class="update-title">Technical Committee Member, FinRL Contest 2025</h3>
-                <p class="update-desc">Contributed to the design of challenge benchmarks and evaluation criteria for the <a href="https://open-finance-lab.github.io/FinRL_Contest_2025/" target="_blank">2025 FinRL Contest</a>, advancing research in financial reinforcement learning.</p>
+                <h3 class="update-title">FinRL Contest 2025 Technical Committee</h3>
+                <p class="update-desc">Served on the technical committee for the <a href="https://open-finance-lab.github.io/FinRL_Contest_2025/" target="_blank">FinRL Contest 2025</a>, shaping benchmarks for financial reinforcement learning challenges.</p>
             </li>
             <li class="update-item">
                 <div class="update-date">February 2025</div>
-                <h3 class="update-title">Organized Catapult 2025 Hackathon</h3>
-                <p class="update-desc">Coordinated logistics and led programming tracks for Purdue's Catapult 2025 AI × Startup hackathon, empowering teams to build innovative financial technology solutions. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7304184969428434944/" target="_blank">View highlights</a>.</p>
+                <h3 class="update-title">Catapult 2025 Hackathon Organizer</h3>
+                <p class="update-desc">Co-led the programming tracks at Purdue’s Catapult 2025 AI × Startup hackathon, empowering teams to build innovative fintech solutions. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7304184969428434944/" target="_blank">View highlights</a>.</p>
             </li>
         </ul>
     </section>
