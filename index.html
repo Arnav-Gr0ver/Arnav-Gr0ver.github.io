@@ -112,6 +112,7 @@
     font-size: 1.08rem;
     font-weight: 400;
     letter-spacing: -0.005em;
+    text-align: center;
   }
 
   .bio p:last-child {
@@ -152,16 +153,21 @@
   }
 
   .entry-title {
-    display: block;
+    display: inline;
     font-size: 1.05rem;
     font-weight: 700;
     letter-spacing: -0.01em;
+    line-height: 1.4;
     color: var(--ink);
     background-image: linear-gradient(var(--ink), var(--ink));
     background-repeat: no-repeat;
     background-size: 0% 1px;
     background-position: 0 100%;
     transition: background-size 0.15s ease;
+  }
+
+  .entry-title-wrap {
+    display: block;
     margin-bottom: 4px;
   }
 
@@ -250,7 +256,7 @@
       <a class="entry" href="papers/orchestration-framework.html">
         <div class="entry-row">
           <span class="entry-heading">
-            <span class="entry-title">Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading</span>
+            <span class="entry-title-wrap"><span class="entry-title">Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading</span></span>
             <span class="entry-meta">NeurIPS 2025 Workshop on GenAI in Finance &middot; Dec 2025</span>
           </span>
           <span class="entry-arrow">&rarr;</span>
@@ -260,7 +266,7 @@
       <a class="entry" href="papers/finrllama.html">
         <div class="entry-row">
           <span class="entry-heading">
-            <span class="entry-title">FinRLlama: A Solution to LLM-Engineered Signals Challenge at FinRL Contest 2024</span>
+            <span class="entry-title-wrap"><span class="entry-title">FinRLlama: A Solution to LLM-Engineered Signals Challenge at FinRL Contest 2024</span></span>
             <span class="entry-meta">ACM ICAIF 2024, FinRL Contest &middot; Feb 2025</span>
           </span>
           <span class="entry-arrow">&rarr;</span>
