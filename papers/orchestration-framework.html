@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orchestration Framework for Financial Agents</title>
+<style>
+  :root {
+    --ink: #111111;
+    --muted: #555555;
+    --rule: #cccccc;
+    --paper: #ffffff;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 120px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 40px;
+  }
+
+  .back-link:hover {
+    color: var(--ink);
+  }
+
+  .entry-meta {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin: 0 0 24px;
+  }
+
+  .source-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .source-link:hover {
+    border-color: var(--ink);
+    background: #fafafa;
+  }
+
+  .source-link svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    fill: currentColor;
+  }
+
+  .source-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    color: var(--muted);
+    padding-left: 8px;
+    border-left: 1px solid var(--rule);
+  }
+
+  .source-stat svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .source-stat.is-loading {
+    color: var(--rule);
+  }
+
+  .rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 32px 0;
+  }
+
+  h2 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+
+  section {
+    margin-bottom: 32px;
+  }
+
+  section:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .body-text p {
+    margin: 0 0 14px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .body-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 480px) {
+    .page {
+      padding: 48px 20px 80px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <a class="back-link" href="../index.html">&larr; Back</a>
+
+  <span class="entry-meta">NeurIPS 2025 Workshop on GenAI in Finance &middot; Dec 2025</span>
+  <h1>Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading</h1>
+
+  <div class="source-links">
+    <a class="source-link" href="https://github.com/Open-Finance-Lab/AgenticTrading" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      GitHub
+      <span class="source-stat is-loading" data-gh-stat="Open-Finance-Lab/AgenticTrading">
+        <svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+        &hellip;
+      </span>
+    </a>
+    <a class="source-link" href="https://arxiv.org/abs/2512.02227" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16"><path d="M14.5 0h-13A1.5 1.5 0 0 0 0 1.5v13A1.5 1.5 0 0 0 1.5 16h13a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 14.5 0ZM4.5 12.2 6.9 8 4.6 3.9h1.6L8 7.3l1.8-3.4h1.6L9 8l2.4 4.2H9.8L8 8.8l-1.9 3.4Z"/></svg>
+      arXiv
+      <span class="source-stat is-loading" data-s2-stat="arXiv:2512.02227">&hellip;</span>
+    </a>
+  </div>
+
+  <section>
+    <h2>Abstract</h2>
+    <div class="body-text">
+      <p>
+        The financial market is a mission-critical playground for AI
+        agents due to its temporal dynamics and low signal-to-noise
+        ratio. Building an effective algorithmic trading system may
+        require a professional team to develop and test over the years.
+        This paper proposes an orchestration framework for financial
+        agents that aims to democratize financial intelligence for the
+        general public, mapping each component of a traditional
+        algorithmic trading system onto a dedicated agent: planner,
+        orchestrator, alpha, risk, portfolio, backtest, execution, audit,
+        and memory.
+      </p>
+      <p>
+        Two in-house trading examples are presented. For an hourly stock
+        trading task (04/2024&ndash;12/2024), the approach achieved a
+        20.42% return with a Sharpe ratio of 2.63 and a maximum drawdown
+        of &minus;3.59%, while the S&amp;P 500 index returned 15.97% over
+        the same period. For a minute-level BTC trading task
+        (07/2025&ndash;08/2025), the approach returned 8.39% with a
+        Sharpe ratio of 0.38 and a maximum drawdown of &minus;2.80%,
+        while the BTC price itself rose 3.80%.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Notes</h2>
+    <div class="body-text">
+      <p>
+        Nine-agent pipeline replicating the full lifecycle of a
+        traditional quant desk: planner, orchestrator, alpha, risk,
+        portfolio, backtest, execution, audit, and memory agents each
+        map onto a distinct stage of the workflow rather than being
+        collapsed into a single end-to-end model.
+      </p>
+      <p>
+        The framing is explicitly about democratizing access: building an
+        effective algorithmic trading system has historically required a
+        professional team working over years, and this orchestration
+        layer is proposed as a way to lower that barrier for individual
+        users. Code is released publicly on GitHub
+        (Open-Finance-Lab/AgenticTrading).
+      </p>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('[data-gh-stat]').forEach(async (el) => {
+      const repo = el.getAttribute('data-gh-stat');
+      let res;
+      try {
+        res = await fetch(`https://api.github.com/repos/${repo}`);
+      } catch (networkErr) {
+        console.warn('GitHub fetch blocked (network/CORS) for', repo, networkErr);
+        el.classList.remove('is-loading');
+        el.textContent = 'stars: open via a server, not a local file';
+        el.title = String(networkErr.message || networkErr);
+        return;
+      }
+      try {
+        if (!res.ok) {
+          if (res.status === 403) {
+            throw new Error('rate limited (try again later)');
+          }
+          throw new Error('GitHub API error ' + res.status);
+        }
+        const data = await res.json();
+        el.classList.remove('is-loading');
+        el.innerHTML = `<svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg> ${data.stargazers_count.toLocaleString()}`;
+      } catch (err) {
+        console.warn('GitHub stat fetch failed for', repo, err);
+        el.classList.remove('is-loading');
+        el.textContent = 'stars: ' + err.message;
+        el.title = String(err.message || err);
+      }
+    });
+
+    document.querySelectorAll('[data-s2-stat]').forEach(async (el) => {
+      const paperId = el.getAttribute('data-s2-stat');
+      let res;
+      try {
+        res = await fetch(`https://api.semanticscholar.org/graph/v1/paper/${paperId}?fields=citationCount`);
+      } catch (networkErr) {
+        console.warn('Semantic Scholar fetch blocked (network/CORS) for', paperId, networkErr);
+        el.classList.remove('is-loading');
+        el.textContent = 'citations: blocked by browser (CORS)';
+        el.title = String(networkErr.message || networkErr);
+        return;
+      }
+      try {
+        if (!res.ok) {
+          if (res.status === 429) {
+            throw new Error('rate limited (try again later)');
+          }
+          if (res.status === 404) {
+            throw new Error('not indexed on Semantic Scholar yet');
+          }
+          throw new Error('Semantic Scholar API error ' + res.status);
+        }
+        const data = await res.json();
+        el.classList.remove('is-loading');
+        el.textContent = `${data.citationCount.toLocaleString()} citations`;
+      } catch (err) {
+        console.warn('Semantic Scholar stat fetch failed for', paperId, err);
+        el.classList.remove('is-loading');
+        el.textContent = 'citations: ' + err.message;
+        el.title = String(err.message || err);
+      }
+    });
+  </script>
+
+</div>
+</body>
+</html>
