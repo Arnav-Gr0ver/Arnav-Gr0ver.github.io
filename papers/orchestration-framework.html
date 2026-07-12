@@ -68,7 +68,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 36px;
+    margin-bottom: 8px;
+  }
+
+  .stat-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0 0 36px;
   }
 
   .source-link {
@@ -179,9 +185,10 @@
     <a class="source-link" href="https://arxiv.org/abs/2512.02227" target="_blank" rel="noopener">
       <svg viewBox="0 0 16 16"><path d="M14.5 0h-13A1.5 1.5 0 0 0 0 1.5v13A1.5 1.5 0 0 0 1.5 16h13a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 14.5 0ZM4.5 12.2 6.9 8 4.6 3.9h1.6L8 7.3l1.8-3.4h1.6L9 8l2.4 4.2H9.8L8 8.8l-1.9 3.4Z"/></svg>
       arXiv
-      <span class="source-stat is-loading" data-s2-stat="arXiv:2512.02227">&hellip;</span>
+      <span class="source-stat">1 citation</span>
     </a>
   </div>
+  <p class="stat-note">Citation count via Google Scholar, last checked Jul 2026.</p>
 
   <section>
     <h2>Abstract</h2>
@@ -241,6 +248,8 @@
       try {
         res = await fetch(`https://api.github.com/repos/${repo}`);
       } catch (networkErr) {
+        // fetch() itself threw: almost always a blocked/CORS request, most
+        // commonly from opening the file directly (file:// instead of http://)
         console.warn('GitHub fetch blocked (network/CORS) for', repo, networkErr);
         el.classList.remove('is-loading');
         el.textContent = 'stars: open via a server, not a local file';
@@ -261,39 +270,6 @@
         console.warn('GitHub stat fetch failed for', repo, err);
         el.classList.remove('is-loading');
         el.textContent = 'stars: ' + err.message;
-        el.title = String(err.message || err);
-      }
-    });
-
-    document.querySelectorAll('[data-s2-stat]').forEach(async (el) => {
-      const paperId = el.getAttribute('data-s2-stat');
-      let res;
-      try {
-        res = await fetch(`https://api.semanticscholar.org/graph/v1/paper/${paperId}?fields=citationCount`);
-      } catch (networkErr) {
-        console.warn('Semantic Scholar fetch blocked (network/CORS) for', paperId, networkErr);
-        el.classList.remove('is-loading');
-        el.textContent = 'citations: blocked by browser (CORS)';
-        el.title = String(networkErr.message || networkErr);
-        return;
-      }
-      try {
-        if (!res.ok) {
-          if (res.status === 429) {
-            throw new Error('rate limited (try again later)');
-          }
-          if (res.status === 404) {
-            throw new Error('not indexed on Semantic Scholar yet');
-          }
-          throw new Error('Semantic Scholar API error ' + res.status);
-        }
-        const data = await res.json();
-        el.classList.remove('is-loading');
-        el.textContent = `${data.citationCount.toLocaleString()} citations`;
-      } catch (err) {
-        console.warn('Semantic Scholar stat fetch failed for', paperId, err);
-        el.classList.remove('is-loading');
-        el.textContent = 'citations: ' + err.message;
         el.title = String(err.message || err);
       }
     });
