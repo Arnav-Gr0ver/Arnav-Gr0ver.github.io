@@ -154,6 +154,26 @@
     margin-bottom: 0;
   }
 
+  .note-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .note-gallery img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    display: block;
+  }
+
+  .note-gallery figcaption {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
   @media (max-width: 480px) {
     .page {
       padding: 48px 20px 80px;
@@ -238,6 +258,11 @@
         users. Code is released publicly on GitHub
         (Open-Finance-Lab/AgenticTrading).
       </p>
+      <figure class="note-gallery">
+        <img src="images/nips-poster-1.png" alt="Presenting the orchestration framework poster at the NeurIPS workshop">
+        <img src="images/nips-poster-2.png" alt="Orchestration framework poster on display at the NeurIPS workshop">
+        <figcaption>Our poster at the NeurIPS workshop!</figcaption>
+      </figure>
     </div>
   </section>
 
