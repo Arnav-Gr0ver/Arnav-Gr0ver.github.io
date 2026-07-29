@@ -157,12 +157,14 @@
   .note-gallery {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     margin-top: 20px;
   }
 
   .note-gallery img {
     width: 100%;
+    max-height: 340px;
+    object-fit: cover;
     border-radius: 8px;
     border: 1px solid var(--rule);
     display: block;
@@ -170,8 +172,10 @@
 
   .note-gallery figcaption {
     font-size: 0.78rem;
+    font-style: italic;
     color: var(--muted);
-    margin-top: 6px;
+    text-align: center;
+    margin-top: 4px;
   }
 
   @media (max-width: 480px) {
